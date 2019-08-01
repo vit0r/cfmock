@@ -1,10 +1,10 @@
-# cfmock
+# cwmock
 ##### command-line flask http/rest/json mock
 
 `python setup.py install`
 
-`cfmock --help`
+`cwmock --help`
 
 ##### Localhost-web prototype
 
-![host-web-screen](https://raw.githubusercontent.com/vit0r/cfmock/master/img.png)
+![host-web-screen](https://raw.githubusercontent.com/vit0r/cwmock/master/img.png)

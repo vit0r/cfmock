@@ -2,11 +2,11 @@ from setuptools import setup, find_packages
 
 setup(
     packages=find_packages(exclude='tests'),
-    tests_require=['ptest', 'flask', 'click'],
-    install_requires=['click', 'flask'],
+    tests_require=['ptest', 'werkzeug', 'click'],
+    install_requires=['click', 'werkzeug'],
     entry_points={
         'console_scripts': [
-            'cfmock=cfmock.__main__:main'
+            'cwmock=cwmock.__main__:main'
         ],
     }
 )
