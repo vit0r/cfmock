@@ -1,4 +1,10 @@
 # cwmock
+
+[![Current version at PyPI](https://img.shields.io/pypi/v/cwmock.svg)](https://pypi.python.org/pypi/cwmock)
+![Supported Python Versions](https://img.shields.io/pypi/pyversions/cwmock.svg)
+![Software status](https://img.shields.io/pypi/status/cwmock.svg)
+[![License: MIT](https://img.shields.io/pypi/l/cwmock.svg)](https://github.com/vit0r/cwmock/blob/master/LICENSE)
+
 ##### command-line werkzeug http/rest/json mock
 
 `python setup.py install`
