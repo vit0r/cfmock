@@ -13,7 +13,7 @@ class CWMock:
 
     def __init__(self, endpoint, mock_file, status_code):
         self.mock_file = mock_file
-        self.content_type = MimeTypes().guess_type(mock_file)
+        self.content_type, *_ = MimeTypes().guess_type(mock_file)
         self.status_code = status_code
         self.url_map = Map([Rule('/{}'.format(endpoint))])
         self.url_map.strict_slashes = False

@@ -5,8 +5,8 @@ from cwmock import CWMock, click
 
 @click.command(name=__name__)
 @click.option('--port', '-p', type=int, default=5001, help='Server port')
-@click.option('--use_debugger', '-d', type=bool, default=True, help='Use debug')
-@click.option('--use_reloader', '-r', type=bool, default=True, help='Use reloader')
+@click.option('--use_debugger', '-d', type=bool, default=False, help='Use debug')
+@click.option('--use_reloader', '-r', type=bool, default=False, help='Use reloader')
 @click.option('--endpoint', '-e', type=str, default='cwmock', help='Endpoint to mock')
 @click.option('--status_code', '-c', type=int, default=200, help='Status code to mock')
 @click.option('--mock_file', '-f', type=click.Path(exists=True), help='File mock')
