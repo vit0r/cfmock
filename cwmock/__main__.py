@@ -14,4 +14,3 @@ def main(port, use_debugger, use_reloader, endpoint, status_code, mock_file):
     app = CWMock(endpoint, mock_file, status_code)
     from werkzeug.serving import run_simple
     run_simple('localhost', port, app, use_debugger, use_reloader)
-main()
