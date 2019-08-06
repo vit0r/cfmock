@@ -15,7 +15,7 @@
 
 `cwmock -f file.xml -c 201`
 
-`cwmock -f path/file.txt -c 201 -e myendpoint -p 8080`
+`cwmock -f path/file.txt -c 201 -e -e user/<int:id> -p 8080`
 
 ##### Localhost-web prototype
 
