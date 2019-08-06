@@ -5,7 +5,7 @@
 ![Software status](https://img.shields.io/pypi/status/cwmock.svg)
 [![License: MIT](https://img.shields.io/pypi/l/cwmock.svg)](https://github.com/vit0r/cwmock/blob/master/LICENSE)
 
-##### command-line werkzeug http/rest/json mock
+##### command-line werkzeug http/json/xml/plain-text mock
 
 `python setup.py install`
 
