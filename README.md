@@ -4,6 +4,8 @@
 ![Supported Python Versions](https://img.shields.io/pypi/pyversions/cwmock.svg)
 ![Software status](https://img.shields.io/pypi/status/cwmock.svg)
 [![License: MIT](https://img.shields.io/pypi/l/cwmock.svg)](https://github.com/vit0r/cwmock/blob/master/LICENSE)
+[![codecov](https://codecov.io/gh/vit0r/cwmock/branch/master/graph/badge.svg)](https://codecov.io/gh/vit0r/cwmock)
+[![GitHub contributors](https://img.shields.io/github/contributors/vit0r/cwmock.svg)](https://github.com/vit0r/cwmock/graphs/contributors)
 
 ##### command-line werkzeug http/json/xml/plain-text mock
 
