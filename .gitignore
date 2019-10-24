@@ -1,3 +1,7 @@
+#mocks
+mocks/*
+*mocks.json
+
 #idea
 .idea/
 
