@@ -4,11 +4,15 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-pytest = "5.0.1"
+pytest = "*"
+pylint = "*"
+pep8 = "*"
+autopep8 = "*"
 
 [packages]
-werkzeug = "0.15.5"
-click = "7.0"
+werkzeug = "*"
+click = "*"
+tinymongo = "*"
 
 [requires]
 python_version = "3.6"

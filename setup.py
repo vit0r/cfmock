@@ -6,7 +6,7 @@ setup(
     install_requires=['werkzeug==0.15.5', 'click==7.0'],
     entry_points={
         'console_scripts': [
-            'cwmock=cwmock.__main__:main'
+            'dynomock=dynomock.__main__:main'
         ],
     }
 )
