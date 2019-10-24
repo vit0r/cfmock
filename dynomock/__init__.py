@@ -16,6 +16,7 @@ class DynoMock:
     """
     Create dynamics mocks for urls
     """
+
     def __init__(self):
         """
 
@@ -25,14 +26,6 @@ class DynoMock:
         self.url_map = Map([Rule('/dynomocklib/update/')])
         self.url_map.strict_slashes = False
         self.mock_path = Path('mocks')
-
-    @property
-    def error_404(self):
-        """
-
-        :return:
-        """
-        return 404
 
     def get_mock_from_db(self, mock_id):
         """
@@ -114,28 +107,20 @@ class DynoMock:
         :param request:
         :return:
         """
-        #adapter = self.map_requested_url(request)
+        # adapter = self.map_requested_url(request)
         print('request: ', request)
 
         mock_id, mock_data = self.build_mock(request)
         print('Mock id:', mock_id)
         print('Mock info:\n', mock_data)
         if not mock_data.get('data'):
-            put_url = 'PUT - http://localhost:5001/dynomock/update/{}'
-            print('Create mock id: {} on: {}'.format(mock_id, put_url))
+            put_url = 'PUT - http://localhost:5001/dynomock/update'
+            print(f'Create mock id: {mock_id} on: {put_url}/{mock_id}')
         mock_from_db = self.get_mock_from_db(mock_id)
         if mock_from_db:
             return self.result(mock_from_db)
         mock_id, mock_data = self.create_mock(mock_data, mock_id)
         return self.result(mock_data)
-
-    """def map_requested_url(self, request):
-        if Rule(request.path) not in self.url_map._rules:
-            self.url_map.add([Rule(request.path)])
-        adapter = self.url_map.bind_to_environ(request.environ)
-        adapter.match() # check if url was mapped
-        return adapter
-    """
 
     def wsgi_app(self, request_environ, start_response):
         """
