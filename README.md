@@ -7,11 +7,15 @@
 [![codecov](https://codecov.io/gh/vit0r/dynomock/branch/master/graph/badge.svg)](https://codecov.io/gh/vit0r/dynomock)
 [![GitHub contributors](https://img.shields.io/github/contributors/vit0r/dynomock.svg)](https://github.com/vit0r/dynomock/graphs/contributors)
 
-##### command-line werkzeug http/json/xml/plain-text mock
+###### command-line werkzeug http/json/xml/plain-text mock
 
 `$ python setup.py install`
+
+######or:
+
+`$ python3.6 -m pip install dynomock --user`
+
+######usage:
+
 `$ dynomock -p 8080`
 
-##### Localhost-web prototype
-
-![host-web-screen](https://raw.githubusercontent.com/vit0r/dynomock/master/img.png)
