@@ -1,5 +1,5 @@
 """init imports for use in main file"""
-
+import re
 from hashlib import md5
 from os import environ
 from pathlib import Path
@@ -17,13 +17,15 @@ class DynoMock:
     Create dynamics mocks for urls
     """
 
+    UPDATE_URL_PATH = '/dynomocklib/update/'
+
     def __init__(self):
         """
 
         """
-        self.content_type = None
+        self.content_type = 'application/json'
         self.status_code = 200
-        self.url_map = Map([Rule('/dynomocklib/update/')])
+        self.url_map = Map([Rule(self.UPDATE_URL_PATH)])
         self.url_map.strict_slashes = False
         self.mock_path = Path('mocks')
 
@@ -50,15 +52,14 @@ class DynoMock:
             content_type=response.get('content_type'),
         )
 
-    @classmethod
-    def build_mock(cls, request):
+    def build_mock(self, request):
         """
 
         :param request:
         :return:
         """
         new_data = {
-            'content_type': request.content_type if request.content_type else 'application/json',
+            'content_type': request.content_type if request.content_type else self.content_type,
             'path': request.url,
             'query_string': request.query_string.decode('utf-8'),
             'data': request.data.decode('utf-8'),
@@ -67,6 +68,20 @@ class DynoMock:
         request_bytes = str(new_data).strip().encode('utf-8')
         mock_id = md5(request_bytes).hexdigest()
         return mock_id, new_data
+
+    def update_mock(self, request):
+        """
+
+        :param request:
+        :return:
+        """
+        if str(request.path).startswith(self.UPDATE_URL_PATH) and request.method == 'PUT':
+            path_id = re.search(r'.*\/(.*)', request.path)
+            if path_id:
+                mock_id = path_id.group(1)
+                mock_from_db = self.get_mock_from_db(mock_id)
+                mock_from_db['data'] = request.data.decode('utf-8')
+                self.get_db().update_one({'_id': mock_id}, mock_from_db)
 
     def get_mocks_dir(self):
         """
@@ -109,13 +124,13 @@ class DynoMock:
         """
         # adapter = self.map_requested_url(request)
         print('request: ', request)
-
+        self.update_mock(request)
         mock_id, mock_data = self.build_mock(request)
         print('Mock id:', mock_id)
         print('Mock info:\n', mock_data)
         if not mock_data.get('data'):
-            put_url = 'PUT - http://localhost:5001/dynomock/update'
-            print(f'Create mock id: {mock_id} on: {put_url}/{mock_id}')
+            put_url = 'PUT - http://localhost:5001'
+            print(f'Create mock id: {mock_id} on: {put_url}{self.UPDATE_URL_PATH}{mock_id}')
         mock_from_db = self.get_mock_from_db(mock_id)
         if mock_from_db:
             return self.result(mock_from_db)

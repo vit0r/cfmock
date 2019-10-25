@@ -1,5 +1,7 @@
 """dynomock - commandline endpoint mocker"""
 
+from werkzeug.serving import run_simple
+
 from dynomock import DynoMock, click
 
 
@@ -8,7 +10,13 @@ from dynomock import DynoMock, click
 @click.option('--use_debugger', '-d', type=bool, default=False, help='Use debug')
 @click.option('--use_reloader', '-r', type=bool, default=False, help='Use reload')
 def main(port, use_debugger, use_reloader):
+    """
+
+    :param port:
+    :param use_debugger:
+    :param use_reloader:
+    :return:
+    """
     app = DynoMock()
-    from werkzeug.serving import run_simple
     run_simple('localhost', port, app, use_debugger, use_reloader)
 main()
