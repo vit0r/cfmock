@@ -11,11 +11,13 @@
 
 `$ python setup.py install`
 
-######or:
+#or:
 
 `$ python3.6 -m pip install dynomock --user`
 
-######usage:
+#usage:
+
+`$ dynomock --help`
 
 `$ dynomock -p 8080`
 
