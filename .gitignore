@@ -124,3 +124,5 @@ dmypy.json
 
 #PIPENV
 Pipenv.lock
+
+default.json

@@ -2,7 +2,7 @@
 import pytest
 
 
-@pytest.mark.parametrize('response_data', ['./test.json'])
+@pytest.mark.parametrize("response_data", ["./test.json"])
 def test_return_mock_successfully(response_data):
     """
     Tests success response mock
