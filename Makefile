@@ -7,5 +7,5 @@ run-deploy:
 	find . -name '__pycache__' -type d | xargs rm -fr	
 	rm -fr *.egg *.egg-info/ dist/ build/ docs/_build/
 run-linters:
-	isort -rc pyndv tests
-	black pyndv tests
+	isort -rc dynomock tests
+	black dynomock tests

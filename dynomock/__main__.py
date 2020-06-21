@@ -19,6 +19,3 @@ def main(port, use_debugger, use_reloader):
     """
     app = DynoMock()
     run_simple("localhost", port, app, use_debugger, use_reloader)
-
-
-main()
