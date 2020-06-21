@@ -1,4 +1,4 @@
-"""dynomock - commandline endpoint mocker"""
+"""dynomock  -  commandline endpoint mocker"""
 
 from werkzeug.serving import run_simple
 
