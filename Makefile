@@ -1,5 +1,3 @@
-run-bumpversion: 
-	bumpversion release --allow-dirty --new-version=$(buildnumber)
 run-deploy: 
 	find . -name '*.pyc' -delete 
 	find . -name '__pycache__' -type d | xargs rm -fr	
