@@ -22,8 +22,7 @@ before_deploy:
 deploy:
   - provider: pypi
     user: "$USER_PYPI"
-    password:
-      secure: s5qO2lrmryc8iIAj6wM8zrqAHg9FxR+dVlsn1X5Xoal/SCLFGWiC9AsIm2VRMzHzt1G3rQIge1mMtiFAz/pdqteidPoG60BmOmCNaSUQUxP8N3ZjDSlWZ45Alp0EYA3SZxLhgp24BA+edlv72KOHy/m4I7PzFcWxnwTATN2VonozWtkrq9URoBqKStdnC/ONvDafkKDa2ZascxTmV6DMJKbnvcpl0ZJ/fYbN+U6bEPl6HsiROmbPKuo5J+fyNhAaO/jQoBVTqrj9tanm+0YkdLZ01cJX3JB40wuwhz0qvQJUem21jfP9DlqfnmEX8wiAdJBPU1cdx7ozFekschtB0q1jw5BL7BcYzZaEEVBKVUKYZZvLO3BbgJamGaCQN3xBC6dznpOP5dU95q+jfX4kUbFfM58eoU/VboPzfnO6HVjoi7ukufxe3ef9tly+cmtlEuVAoZqx2hOD6CiMo4f1NLhhK5gyT8wuvL13fSUoEUeUhNSTKPu628RJcsYh9PcbRYCKDJDRezpFs+D0FwqFTl7MvQ3teGr3neBvh9GU2ul1mR78AcwkjjWZ1fjOfjsoHET9TKhV8eXvkUZkH3WXEP7tyEcX17cD47AxnopcQVvgQduT2wJ5KtoxiJO73+jTsgjgsovp0TSTxb0iwVaNSbuc6vjRDAT16d7CWCcmvGU=
+    password: "$PASS_PYPI"
     distributions: sdist bdist_wheel
     skip_existing: true
 notifications:
