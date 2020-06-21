@@ -4,4 +4,4 @@ run-deploy:
 	rm -fr *.egg *.egg-info/ dist/ build/ docs/_build/
 run-linters:
 	isort -rc dynomock
-	black dynomock
+	black check dynomock
