@@ -11,6 +11,7 @@ branches:
     - master
 install: pip install -r requirements.txt
 before_script:
+  - make run-linters
   - make run-bumpversion buildnumber=$TRAVIS_TAG
 script: make run-deploy
 before_deploy:
