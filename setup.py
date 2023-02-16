@@ -7,7 +7,7 @@ setup(
     packages=find_packages(exclude="tests"),
     tests_require=[
         "pytest==5.4.3",
-        "Werkzeug==1.0.1",
+        "Werkzeug==2.2.3",
         "click==7.1.2",
         "tinydb==4.1.1",
     ],
